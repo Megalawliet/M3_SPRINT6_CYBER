@@ -15,7 +15,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'Cyber/Hello'
+          tags: 'cyber/hello'
 
       - name: Login to DockerHub
         if: github.ref == 'refs/heads/master'
