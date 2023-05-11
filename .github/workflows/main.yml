@@ -11,10 +11,11 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Build and push Docker image
-        uses: docker/build-push-action@v4.0.
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: .  //Contexto para el comando Docker
-          push: false //Indicamos si queremos hacer push de la imagen
+          context: .
+          push: true
+          tags: 'Cyber/Hello'
 
       - name: Login to DockerHub
         if: github.ref == 'refs/heads/master'
@@ -22,3 +23,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+          
